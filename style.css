@@ -1,0 +1,70 @@
+html {
+  --header-height: 60px;
+  background-color: var(--background-color)
+}
+
+html[data-theme="light"] {
+  --krasa: rgb(236, 205, 180);
+ --background-color: rgb(240,237,212);
+ --accent-color: rgb(249, 251, 231);
+ --sun-opacity: 1;
+ --moon-opacity: 0;
+}
+
+html[data-theme="dark"] {
+  --krasa: rgb(92, 70, 156);
+  --background-color: rgb(29, 38, 125);
+  --accent-color: rgb(12, 19, 79);
+  --moon-opacity: 1;
+  --sun-opacity: 0;
+}
+
+body {
+  margin: 0;
+}
+
+
+header {
+  width: 100vw;
+  height: var(--header-height);
+  background-color: var(--krasa);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+main {
+  margin-top: var(--header-height);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  gap: 10px;
+  padding: 10px;
+  accent-color: var(--color);
+}
+
+.icon {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  height: 50px;
+  width: 50px;
+}
+
+header > input {
+  z-index: 3;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.sun {
+  opacity: var(--sun-opacity);
+}
+
+.moon {
+  opacity: var(--moon-opacity);
+}
